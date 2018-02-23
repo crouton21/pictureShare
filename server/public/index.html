@@ -12,9 +12,11 @@
 </head>
 <body>
     <main ng-controller="PictureController as pc">
-    
 
-
+    <div ng-repeat="image in pc.imageArray">
+        <div><img ng-src="images/{{image.photo}}" height="200px"></div>
+        <button ng-click="pc.likePhoto(image)">Like</button>
+    </div>
     </main>
 </body>
 </html>
