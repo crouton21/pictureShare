@@ -15,7 +15,8 @@
 
     <div ng-repeat="image in pc.imageArray">
         <div><img ng-src="images/{{image.photo}}" height="200px"></div>
-        <button ng-click="pc.likePhoto(image)">Like</button>
+        <button ng-click="pc.likePhoto(image.id, image.likes)">Like</button>
+        <div>This photo has {{image.likes}} likes!</div>
     </div>
     </main>
 </body>
