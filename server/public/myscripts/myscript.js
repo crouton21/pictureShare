@@ -7,6 +7,7 @@ const pictureController = app.controller('PictureController', ['$http', function
   self.commentArray = [];
 
   self.comment = {};
+  self.newPhoto = {};
 
   self.likePhoto = function(id, likes){
     console.log('in likePhoto, id:', id);
@@ -87,6 +88,27 @@ const pictureController = app.controller('PictureController', ['$http', function
       console.log(error);
     })   
   }
+
+  self.addNewPhoto = function(newPhoto){
+      console.log('in addNewPhoto', newPhoto);
+      $http({
+        method: 'POST',
+        url: `pictures/add`,
+        data: {
+            photo: newPhoto.photo,
+            description: newPhoto.description,
+            likes: 0
+          }
+      }).then(function(response) {
+        console.log('Photo added');
+        self.getImages();
+        self.newPhoto = {};
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+  }
+
 
   self.getImages();
   self.getComments();

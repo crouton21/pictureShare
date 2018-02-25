@@ -73,6 +73,20 @@ router.get('/', function(request, response){
       })
   })
 
+  router.post('/add', function(request, response){
+    const newPhoto = request.body;
+    console.log('newPhoto on backend:', newPhoto);
+    const sqlText = `INSERT INTO photos (photo, description, likes) VALUES ($1, $2, $3)`;
+    pool.query(sqlText, [newPhoto.photo, newPhoto.description, newPhoto.likes])
+    .then(function(result) {
+      response.sendStatus(200);
+    })
+    .catch(function(error) {
+      console.log('Error adding photo');
+      response.sendStatus(500);
+    })
+    
+  })
 
 
 module.exports = router;
