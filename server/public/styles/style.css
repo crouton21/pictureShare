@@ -110,6 +110,7 @@ body{
     text-align: right;
     padding-right: 30px;
     width:100%;
+    margin-right: -50px;
     margin-bottom: 30px;
 }
 
@@ -130,6 +131,18 @@ body{
     border-width: 0.5px;
     border-radius: 7px;
     width: 200px;
+}
+
+.emptyCommentBox{
+    margin-left: 50px;
+    margin-top: 10px;
+    border-style: solid;
+    border-color:#afbdd4;
+    border-width: 0.5px;
+    border-radius: 7px;
+    width: 200px;
+    color: lightgray;
+    padding-left: 1px;
 }
 
 #commentSection{

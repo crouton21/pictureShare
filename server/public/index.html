@@ -24,11 +24,12 @@
             <img id="description_picture" class="vertical-center centerBlock center-block" ng-src="/images/{{image.photo}}" ng-show="description" ng-click="description=false" height="200px">
             <div  ng-show="description" id="description" class="vertical-center centerBlock center-block">{{image.description}}</div></div><br>
             <div><button id="likeButton" class="realButton" ng-click="pc.likePhoto(image.id, image.likes)"></button>
-            <button id="commentButton" class="realButton" ng-click="pc.commentSubmitted(image.id, pc.comment.comment_in)"></button><br>
+            <button id="commentButton" class="realButton" ng-click="commentStatus = !commentStatus"></button><br>
             <img ng-src="images/facebook_like_thumb.png" id="likeThumb">
             <div id="numOfLikes">{{image.likes}}</div>
             <div id="line"></div>
-            <form ng-submit="pc.commentSubmitted(image.id, pc.comment.comment_in)" id="commentForm"><input id="commentIn" type="text" placeholder="comment on this.." ng-model="pc.comment.comment_in">
+            <div ng-hide="commentStatus" class="emptyCommentBox">comment on this...</div>
+            <form ng-show="commentStatus" ng-submit="pc.commentSubmitted(image.id, pc.comment.comment_in)" id="commentForm"><input id="commentIn" type="text" placeholder="comment on this.." ng-model="pc.comment.comment_in">
             </form>
             </div><br><br>
             <section id="commentSection">
