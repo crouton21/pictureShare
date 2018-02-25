@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Pictures</title>
     <script src="vendors/angular.min.js"></script>
+    <script src="emoji.min.js"></script> 
     <script src="scripts/script.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/emoji.css" rel="stylesheet">
 </head>
 <body>
     <main ng-controller="PictureController as pc">
@@ -27,12 +30,12 @@
             <img ng-src="images/facebook_like_thumb.png" id="likeThumb">
             <div id="numOfLikes">{{image.likes}}</div>
             <div id="line"></div>
-            <form ng-submit="pc.commentSubmitted(image.id, pc.comment.comment_in)" id="commentForm"><input id="commentIn" type="text" placeholder="leave a comment" ng-model="pc.comment.comment_in">
+            <form ng-submit="pc.commentSubmitted(image.id, pc.comment.comment_in)" id="commentForm"><input id="commentIn" type="text" placeholder="comment on this.." ng-model="pc.comment.comment_in">
             </form>
             </div><br><br>
             <section id="commentSection">
                 <div ng-repeat="comment in pc.commentArray">
-                    <div id="individualComment" ng-if="comment.photo_id==image.id">{{comment.comment}}</div>
+                    <div id="individualComment" ng-if="comment.photo_id==image.id">{{comment.comment}}<button class="deleteButton btn-link btn-xs">delete</button></div>
                 </div>
             </section>
             </div>
