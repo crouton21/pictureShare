@@ -85,8 +85,21 @@ router.get('/', function(request, response){
       console.log('Error adding photo');
       response.sendStatus(500);
     })
-    
   })
 
+  router.delete('/delete/:id', function(request, response){
+    const id = request.params.id;
+    console.log('id in delete, server:', id);
+    // right now will only delete images without any likes or comments
+    const sqlText = `DELETE FROM photos WHERE photos.id=$1`;
+    pool.query(sqlText, [id])
+    .then(function(result) {
+      response.sendStatus(200);
+    })
+    .catch(function(error) {
+      console.log('Error deleting photo');
+      response.sendStatus(500);
+    })
+  })
 
 module.exports = router;

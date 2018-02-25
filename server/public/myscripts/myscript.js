@@ -109,6 +109,19 @@ const pictureController = app.controller('PictureController', ['$http', function
       })
   }
 
+  self.deletePhoto = function(id){
+    console.log('in deletePhoto, id:', id)
+    $http({
+      method: 'DELETE',
+      url: `pictures/delete/${id}`
+    }).then(function(response) {
+      console.log('Photo deleted');
+      self.getImages();
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+  }
 
   self.getImages();
   self.getComments();

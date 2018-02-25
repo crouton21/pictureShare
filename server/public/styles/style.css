@@ -64,6 +64,22 @@ body{
     border-style: groove;
     border-color: #afbdd4;
     border-width: 0.5px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+#deletePhotoButton{
+    height: 25px;
+    width: 25px;
+    background: url('../images/x.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #d8dfea;
+    position:relative;
+    top: -25px;
+    float: right;
 
 }
 
@@ -73,6 +89,8 @@ body{
     border-style: groove;
     border-color:#afbdd4;
     border-width: 0.5px;
+    height: 200px;
+    width: 200px;
 }
 
 #likeThumb{
