@@ -1,0 +1,157 @@
+html{
+    background-color:  #d8dfea;
+}
+
+body{
+    background-color: #d8dfea;
+}
+
+#borderDiv{
+    background-color: white;
+    height:420px;
+    width: 300px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    padding-top: 25px;
+}
+
+#pictureDiv{
+    height: 200px;
+    width: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: contain;
+    background: white;
+    margin-left: 50px;
+}
+
+#description{
+    height: 200px;
+    text-align: center;
+    margin-top: -120px;
+    font-size: 12px;
+    font-family:  'Lucida Grande', 'sans-serif';
+    color: black;
+    text-shadow: 0.5px 0.5px 1px  #3b5998;
+
+}
+
+#originalPic{
+    border-style: groove;
+    border-color: #afbdd4;
+    border-width: 0.5px;
+
+}
+
+#description_picture{
+    opacity: 0.3;
+    float: center;
+    border-style: groove;
+    border-color:#afbdd4;
+    border-width: 0.5px;
+}
+
+#likeThumb{
+    width: 15px;
+    height:15px;
+    margin-left: 55px;
+    margin-top: -2px;
+}
+
+#numOfLikes{
+    display: inline-block;
+    font-family:  'Lucida Grande', 'sans-serif';
+    font-size: 10px;
+    margin-top: 10px;
+    color: #3b5998;
+}
+
+#likeButton{
+    height: 28px;
+    width: 97px;
+    background: url('../images/facebook-like.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #d8dfea;
+    margin-left: 50px;
+}
+
+#commentButton{
+    height: 28px;
+    width: 97px;
+    margin-top: 1px;
+    background: url('../images/facebook-comment.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #d8dfea;
+}
+
+.realButton{
+    box-shadow: 2px 2px 2px #A9A9A9;
+}
+  
+.realButton:active{
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px;
+    background-color: inherit;
+    outline: none;
+}
+
+.header{
+    height: 30px;
+    display: block;
+    background-color:#3b5998;
+    font-family:  'Lucida Grande', 'sans-serif';
+    color: white;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 30px;
+    width:100%;
+    margin-bottom: 30px;
+}
+
+#line{
+    border-style: solid;
+    border-color: #afbdd4;
+    border-width: 0.5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+#commentIn{
+    margin-left: 50px;
+    margin-top: 10px;
+    border-style: solid;
+    border-color:#afbdd4;
+    border-width: 0.5px;
+    border-radius: 7px;
+    width: 200px;
+}
+
+#commentSection{
+    margin-left: 10px;
+    margin-top: -30px;
+    width: 280px;
+    height: 60px;
+    background-color: #d8dfea;
+    overflow-y: scroll;
+    
+}
+
+#individualComment{
+    word-wrap: break-word;
+    width: 200px;
+    border-style: solid;
+    border-color:#afbdd4;
+    border-width: 0.5px;
+    border-radius: 7px;
+    background-color: white;
+    padding: 1px;
+    margin-left: 40px;
+    padding-left: 2px;
+    margin-top: 6px;
+}
