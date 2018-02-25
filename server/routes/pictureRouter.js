@@ -48,7 +48,7 @@ router.get('/', function(request, response){
   })
 
   router.get('/comments', function(request, response){
-    const sqlText = 'SELECT photo_id, comment FROM comments JOIN photos ON photos.id=comments.photo_id ORDER BY comments.time_submitted DESC';
+    const sqlText = 'SELECT comments.id, photo_id, comment, time_submitted, photo FROM comments JOIN photos ON photos.id=comments.photo_id ORDER BY comments.time_submitted DESC';
     pool.query(sqlText)
       .then(function(result) {
         console.log('Get result:', result);
@@ -56,6 +56,19 @@ router.get('/', function(request, response){
       })
       .catch(function(error){
         console.log('Error on GET comments:', error);
+        response.sendStatus(500);
+      })
+  })
+
+  router.delete('/comments/:id', function(request, response){
+    const id = request.params.id;
+    const sqlText = `DELETE FROM comments WHERE id=$1`;
+    pool.query(sqlText, [id])
+      .then(function(result) {
+        response.sendStatus(200);
+      })
+      .catch(function(error) {
+        console.log('Error deleting comment');
         response.sendStatus(500);
       })
   })
