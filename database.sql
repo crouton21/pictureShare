@@ -9,7 +9,7 @@ CREATE TABLE photos(
 
 CREATE TABLE comments(
 	id serial primary key,
-	photo_id int references photos,
+	photo_id int,
 	comment varchar,
     time_submitted text DEFAULT NOW
 );
