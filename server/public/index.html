@@ -1,51 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="pictureApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Pictures</title>
     <script src="vendors/angular.min.js"></script>
+    <script src="vendors/angular-route.js"></script>
     <script src="myscripts/myscript.js"></script>
+    <script src="myscripts/services/picture.service.js"></script>
+    <script src="myscripts/controllers/picture.controller.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body>
-    <main ng-controller="PictureController as pc">
-    <div class="header">christiana's photos</div>
-    <div id="addImage">add an image:&nbsp;<input ng-model="pc.newPhoto.photo" type="text" placeholder="url">
-    <input ng-model="pc.newPhoto.description" type="text" placeholder="description">
-    <button class="btn-primary" id="addImageButton" ng-click="pc.addNewPhoto(pc.newPhoto)">add</button>
-    </div>
-    <div class="row">
-    <div ng-repeat="image in pc.imageArray">
-        <div ng-if="$index % 3 == 0"></div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <div id="borderDiv">
-        <button id="deletePhotoButton" ng-click="pc.deletePhoto(image.id)"></button>
-        <div id="pictureDiv">
-            <img ng-hide="description"  id="originalPic" class="vertical-center centerBlock center-block" ng-click="description=true" ng-src="{{image.photo}}" height="200px">
-            <img id="description_picture" class="vertical-center centerBlock center-block" ng-src="{{image.photo}}" ng-show="description" ng-click="description=false" height="200px">
-            <div  ng-show="description" id="description" class="vertical-center centerBlock center-block">{{image.description}}</div></div><br>
-            <div><button id="likeButton" class="realButton" ng-click="pc.likePhoto(image.id, image.likes)"></button>
-            <button id="commentButton" class="realButton" ng-click="commentStatus = !commentStatus"></button><br>
-            <img ng-src="images/fbThumb.png" id="likeThumb">
-            <div id="numOfLikes">{{image.likes}}</div>
-            <div id="line"></div>
-            <div ng-hide="commentStatus" class="emptyCommentBox">comment on this..</div>
-            <form ng-show="commentStatus" ng-submit="pc.commentSubmitted(image.id, pc.comment.comment_in)" id="commentForm"><input id="commentIn" type="text" placeholder="comment on this.." ng-model="pc.comment.comment_in">
-            </form>
-            </div><br><br>
-            <section id="commentSection">
-                <div ng-repeat="comment in pc.commentArray">
-                    <div id="individualComment" ng-if="comment.photo_id==image.id">{{comment.comment}}<button ng-click="pc.deleteButtonClicked(comment.id)" class="deleteButton btn-link btn-xs">delete</button></div>
-                </div>
-            </section>
-            </div>
-        </div>
-    </div>
-    </div>
+<body ng-app="pictureApp">
+    <a href="/#!picture"></a>
+
+    <main ng-view>
+
     </main>
 </body>
 </html>
