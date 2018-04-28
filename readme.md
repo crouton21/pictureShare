@@ -1,5 +1,3 @@
-Name of Project
-
 Photo Gallery https://powerful-wildwood-17671.herokuapp.com/
 
 Built With
